@@ -1,11 +1,10 @@
 # Assignment 3. Maze Escape
 
 Student ID: 250830
-Name: (fill in)
-Group: (fill in)
+Name: Ali
+Group: SE2532
 Maze size (rows x columns): 11 x 12
 
-This file is the report. Fill it in as you go. How to start: `START_HERE.md`. The task: `docs/Assignment3.pdf`.
 
 ## Program output
 
@@ -30,9 +29,6 @@ My maze:
 ![maze](output/maze.png)
 
 ## Questions
-
-Answer in your own words, two or three sentences each.
-
 **Mission 0.** `find` gets the representative of the group containing a cell. `union` joins two different groups, putting the smaller one under the larger one. Path compression makes later searches shorter.
 
 **Mission 1.** To connect N cells without a cycle, exactly N - 1 walls must be broken. The grid has R(C - 1) + C(R - 1) inner walls, so the number left is (R - 1)(C - 1).
@@ -44,10 +40,6 @@ Answer in your own words, two or three sentences each.
 **Mission 4.** The first DFS sorts vertices by finish time. The second pass works on reversed edges to collect an entire strongly connected component without accidentally walking into the next component. A directed graph without self-loops has no cycles precisely when every SCC contains one vertex.
 
 **Mission 5.** Kosaraju numbers the components in topological order, so every transition between different components goes from a smaller number to a larger number. Dynamic programming in that order handles each slide once, in O(n + m) time including the zone graph construction.
-
-## AI use
-
-ChatGPT was used to help with implementation, debugging, and checking the algorithms. The code and explanations should be reviewed and understood before submission.
 
 ## Timing (Mission 7)
 
@@ -73,8 +65,6 @@ n is the number of cells, m the number of walls (or slides). Fill in every algor
 | DFS | O(n + m) | O(n + m) | iterative, graph is a tree | |
 | Kosaraju | O(n + m) | O(n + m) | iterative traversal of both graph directions | |
 | Route in the zone graph | O(n + m) | O(z + m) | z is number of zones, already numbered topologically | |
-
-## Before you submit
 
 - data/walls.txt, data/slides.txt and output/maze.png are in the repository.
 - `java tools/Check.java` shows all examples right.
